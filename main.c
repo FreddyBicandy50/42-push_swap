@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:46:45 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/13 15:53:04 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:41:27 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,15 @@ char	**arg_case(char **argv)
 	argv = ft_split(temp, ' ');
 	free(temp);
 	return (argv);
+}
+
+void	diff(t_stack_node *sa, t_stack_node *sb)
+{
+	printf("------------------------------------");
+	printf("\nStack a:%d\n", stack_size(sa));
+	print_stack(sa);
+	printf("Stack b:%d\n", stack_size(sb));
+	print_stack(sb);
 }
 
 int	main(int argc, char *argv[])

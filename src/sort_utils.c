@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:06:46 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/12 20:09:41 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:41:18 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_stack_node	*find_biggest(t_stack_node *stack)
 
 int	sorted(t_stack_node *sa)
 {
-	while (sa != NULL)
+	while (sa != NULL && sa->next != NULL)
 	{
 		if (sa->data > sa->next->data)
 			return (0);
@@ -78,7 +78,12 @@ void	sort(t_stack_node *sa, t_stack_node *sb)
 	int	size_a;
 
 	size_a = stack_size(sa);
-	if (size_a == 2 || size_a == 3)
+	if (size_a == 2)
+	{
+		if (sa->data > sa->next->data)
+			sa = sw(sa, 'a');
+	}
+	else if (size_a == 3)
 		sa = tinysort(sa);
 	else
 		sa = push_swap(sa, sb, size_a);

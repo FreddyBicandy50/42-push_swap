@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:32:50 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/13 15:54:56 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:41:43 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
-//sa sort
+void			print_stack(t_stack_node *stack);
+void			diff(t_stack_node *sa, t_stack_node *sb);
+
+// sa sort
 void			init_node_a(t_stack_node **a, t_stack_node **b);
 void			move_a_to_b(t_stack_node **a, t_stack_node **b);
 // sb sort

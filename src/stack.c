@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 18:42:03 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/13 15:50:08 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:42:45 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,19 @@ void	free_array(char **array)
 		i++;
 	}
 	free(array);
+}
+
+void	print_stack(t_stack_node *stack)
+{
+	while (stack != NULL)
+	{
+		ft_printf("[%d]:value:%d->", stack->index, stack->data);
+		if (stack->target_node)
+			ft_printf("%d (cost:%d)\n", stack->target_node->data, stack->cost);
+		else
+			ft_printf("NA\n");
+		stack = stack->next;
+	}
 }
 
 void	free_stack(t_stack_node *stack)
