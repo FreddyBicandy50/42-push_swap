@@ -6,27 +6,30 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:46:45 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/14 19:41:27 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/17 15:21:49 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+void ft_error(bool isOne,t_stack_node *sa)
 {
-	ft_printf("ERROR\n");
+	if(isOne)
+		free_stack(sa);
+	else
+		ft_printf("ERROR\n");
 	exit(-1);
 }
 
-char	**arg_case(char **argv)
+char **arg_case(char **argv)
 {
-	int		i;
-	char	*temp;
-	char	*new_temp;
+	int i;
+	char *temp;
+	char *new_temp;
 
 	temp = (char *)malloc(1);
 	if (!temp)
-		ft_error();
+		ft_error(false, NULL);
 	temp[0] = '\0';
 	i = 1;
 	while (argv[i])
@@ -36,7 +39,7 @@ char	**arg_case(char **argv)
 		if (!new_temp)
 		{
 			free_array(argv);
-			ft_error();
+			ft_error(false, NULL);
 		}
 		temp = new_temp;
 		i++;
@@ -46,7 +49,7 @@ char	**arg_case(char **argv)
 	return (argv);
 }
 
-void	diff(t_stack_node *sa, t_stack_node *sb)
+void diff(t_stack_node *sa, t_stack_node *sb)
 {
 	printf("------------------------------------");
 	printf("\nStack a:%d\n", stack_size(sa));
@@ -55,28 +58,30 @@ void	diff(t_stack_node *sa, t_stack_node *sb)
 	print_stack(sb);
 }
 
-int	main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	t_stack_node	*sa;
-	t_stack_node	*sb;
+	t_stack_node *sa;
+	t_stack_node *sb;
 
 	sa = NULL;
 	sb = NULL;
 	if (argc < 2)
-		ft_error();
+		ft_error(false, NULL);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	else
 		argv = arg_case(argv);
 	if (!argv)
-		ft_error();
+		ft_error(false, NULL);
 	sa = stack_store(argv);
 	free_array(argv);
 	if (sa == NULL)
 	{
 		free_stack(sa);
-		ft_error();
+		ft_error(false,NULL);
 	}
+	if (stack_size(sa) == 1)
+		ft_error(true,sa);
 	sort(sa, sb);
 	return (0);
 }
