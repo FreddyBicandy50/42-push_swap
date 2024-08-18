@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 22:50:31 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 13:48:25 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/18 23:05:59 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_free(char *buffer, char *buf)
 {
 	char	*temp;
 
-	temp = ft_strjoin(buffer, buf);
+	temp = ft_strjoin2(buffer, buf);
 	free(buffer);
 	return (temp);
 }

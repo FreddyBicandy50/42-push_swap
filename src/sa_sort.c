@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 20:03:51 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/13 15:58:05 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/18 23:43:30 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
 	{
 		while (*b != cheapest_node->target_node && *a != cheapest_node)
-			rr(a, b);
+			rr(a, b,0);
 		current_index(*a);
 		current_index(*b);
 	}
@@ -55,7 +55,7 @@ void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		&& !cheapest_node->target_node->above_median)
 	{
 		while (*b != cheapest_node->target_node && *a != cheapest_node)
-			rrr(a, b);
+			rrr(a, b,0);
 		current_index(*a);
 		current_index(*b);
 	}

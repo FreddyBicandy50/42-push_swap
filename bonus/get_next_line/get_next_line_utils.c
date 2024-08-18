@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 23:00:47 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 13:44:33 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/18 23:05:45 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen2(const char *str)
 	return (len);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin2(char const *s1, char const *s2)
 {
 	int		sizetotal;
 	char	*res;

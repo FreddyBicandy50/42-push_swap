@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 22:51:35 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 13:43:40 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/18 23:06:11 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <stdio.h>
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin2(char const *s1, char const *s2);
 char	*ft_strchr(const char *string, int searchedChar );
 
 void	ft_bzero(void *s, size_t n);

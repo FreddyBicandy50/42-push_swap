@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps.c                                               :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 15:10:52 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 23:27:27 by fbicandy         ###   ########.fr       */
+/*   Created: 2024/08/18 23:23:02 by fbicandy          #+#    #+#             */
+/*   Updated: 2024/08/18 23:23:04 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
-
-void	ps(t_stack_node **src, t_stack_node **dest, char c)
+int ft_strcmp(char *s1, char *s2)
 {
-	t_stack_node	*temp;
-
-	if (!src || !(*src))
-		return ;
-	temp = *src;
-	*src = (*src)->next;
-	if (*src)
-		(*src)->prev = NULL;
-	temp->next = *dest;
-	if (*dest)
-		(*dest)->prev = temp;
-	*dest = temp;
-	temp->prev = NULL;
-	if(c!=32)
-		ft_printf("p%c\n", c);
+    while (*s1 && *s2)
+    {
+        if (*s1 != *s2)
+            return (*s1 - *s2);
+        s1++;
+        s2++;
+    }
+    return (*s1 - *s2);
 }
