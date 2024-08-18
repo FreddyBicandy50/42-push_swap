@@ -5,37 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 23:56:46 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/17 15:03:19 by fbicandy         ###   ########.fr       */
+/*   Created: 2024/08/18 13:04:06 by fbicandy          #+#    #+#             */
+/*   Updated: 2024/08/18 14:22:11 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "./get_next_line/get_next_line.h"
 
-int main(int argc, char *argv[])
+int main(void)
 {
-    t_stack_node *a;
-    t_stack_node *b;
-    // char **numbers;
-    char *line;
-    int fd;
-
-    (void)*a;
-    (void)*b;
-    (void)*argv;
-    a = NULL;
-    b = NULL;
-    if (argc != 3)
-        exit(1);
-    // numbers = ft_split(argv[1], ' ');
-    // init_stack(a);
-    fd = open(argv[1], O_RDONLY);
-    while ((line = get_next_line(fd)))
-    {
-        printf("%s", line);
-        free(line);
-    }
-    close(fd);
+    ft_printf("Checker");
     return (0);
 }

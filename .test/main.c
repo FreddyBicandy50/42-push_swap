@@ -34,7 +34,7 @@ void print_stack(t_stack_node *stack)
 {
 	while (stack != NULL)
 	{
-		printf("*%d\n", stack->data);
+		ft_printf("*%d\n", stack->data);
 		stack = stack->next;
 	}
 }
@@ -180,11 +180,11 @@ void ps(t_stack_node **src, t_stack_node **dest)
 
 void diff(t_stack_node *sa, t_stack_node *sb)
 {
-	printf("-> stack a:\n");
+	ft_printf("-> stack a:\n");
 	print_stack(sa);
-	printf("-> stack b:\n");
+	ft_printf("-> stack b:\n");
 	print_stack(sb);
-	printf("\n");
+	ft_printf("\n");
 }
 
 int main(void)

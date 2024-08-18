@@ -6,7 +6,7 @@
 #    By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/06 22:53:03 by fbicandy          #+#    #+#              #
-#    Updated: 2024/08/17 09:07:42 by fbicandy         ###   ########.fr        #
+#    Updated: 2024/08/18 13:46:03 by fbicandy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,11 @@ INCLUDES = ./
 PRINTF = ./libraries/ft_printf/libftprintf.a
 LIBFTDIR = ./libraries/ft_printf
 
-
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 BONUS = ./bonus/checker.c ./bonus/get_next_line/get_next_line.c ./bonus/get_next_line/get_next_line_utils.c \
-
-
+		./bonus/get_next_line/get_next_line.c ./bonus/get_next_line/get_next_line_utils.c \
 
 SRCS = main.c \
 	src/operations/ps.c src/operations/rrs.c src/operations/rs.c src/operations/sw.c \
@@ -35,7 +33,7 @@ BONUS_OBJ = $(BONUS:.c=.o)
 all: $(NAME)
 
 bonus: $(BONUS_OBJ)
-	$(CC) $(CFLAGS) $(BONUS_OBJ) -o CHECKER
+	$(CC) $(CFLAGS) $(BONUS_OBJ) $(PRINTF)  -o CHECKER
 
 
 $(NAME): $(OBJECTS) $(PRINTF) 
