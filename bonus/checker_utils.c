@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 23:13:22 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/19 10:55:25 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/19 11:56:32 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,25 @@ void	checker(t_stack_node *sa, t_stack_node *sb)
 {
 	char	*line;
 	int		count;
-	int		fd;
 
 	count = 0;
-	fd = open("out", O_RDONLY);
-	line = get_next_line(fd);
+	line = get_next_line(0);
 	while (line != NULL)
 	{
-		if (ft_strcmp(line, "pa\n") == 0 || ft_strcmp(line, "pb\n") == 0
+		if (ft_strcmp(line, "pa\n") == 0
+			|| ft_strcmp(line, "pb\n") == 0
 			|| ft_strcmp(line, "rr\n") == 0
-			|| ft_strcmp(line, "rrr\n") == 0 || ft_strcmp(line, "ss\n") == 0)
+			|| ft_strcmp(line, "rrr\n") == 0
+			|| ft_strcmp(line, "ss\n") == 0)
 			do_multi(&sa, &sb, line);
-		if (ft_strcmp(line, "ra\n") == 0 || ft_strcmp(line, "rra\n") == 0
-			|| ft_strcmp(line, "sa\n"))
+		else if (ft_strcmp(line, "ra\n") == 0 || ft_strcmp(line, "rra\n") == 0
+			|| ft_strcmp(line, "sa\n") == 0)
 			sa = do_sa(sa, line);
-		if (ft_strcmp(line, "rb\n") == 0 || ft_strcmp(line, "rrb\n") == 0
-			|| ft_strcmp(line, "sb\n"))
+		else if (ft_strcmp(line, "rb\n") == 0 || ft_strcmp(line, "rrb\n") == 0
+			|| ft_strcmp(line, "sb\n") == 0)
 			sb = do_sb(sb, line);
 		free(line);
-		line = get_next_line(fd);
+		line = get_next_line(0);
 		count++;
 	}
 	result(sa, count);
