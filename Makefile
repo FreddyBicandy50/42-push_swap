@@ -6,7 +6,7 @@
 #    By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/06 22:53:03 by fbicandy          #+#    #+#              #
-#    Updated: 2024/08/18 23:23:52 by fbicandy         ###   ########.fr        #
+#    Updated: 2024/08/19 12:03:23 by fbicandy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ BONUS_OBJ = $(push_swap_BONUS:.c=.o)
 all: $(NAME)
 
 bonus: $(BONUS_OBJ)
-	$(CC) $(CFLAGS) $(BONUS_OBJ) $(PRINTF)  -o CHECKER
+	$(CC) $(CFLAGS) $(BONUS_OBJ) $(PRINTF)  -o checker
 
 
 $(NAME): $(OBJECTS) $(PRINTF) 
@@ -45,8 +45,6 @@ $(NAME): $(OBJECTS) $(PRINTF)
 $(PRINTF):	
 	@make -C ./libraries/ft_printf
 
-z: all bonus clean
-
 clean:	
 	@make clean -C ./libraries/ft_printf
 	rm -f $(OBJECTS) $(BONUS_OBJ)
@@ -54,6 +52,6 @@ clean:
 fclean: clean
 	@make fclean -C ./libraries/ft_printf 
 	rm -f $(NAME)
-	rm -f CHECKER
+	rm -f checker
 re: fclean all
 .PHONY: all bonus clean fclean re
