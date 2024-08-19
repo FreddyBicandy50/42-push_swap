@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 15:10:52 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 23:27:27 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/19 11:01:44 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	ps(t_stack_node **src, t_stack_node **dest, char c)
 		(*dest)->prev = temp;
 	*dest = temp;
 	temp->prev = NULL;
-	if(c!=32)
+	if (c != 32)
 		ft_printf("p%c\n", c);
 }

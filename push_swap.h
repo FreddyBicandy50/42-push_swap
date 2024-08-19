@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:32:50 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 23:44:24 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:59:28 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
+// main
 void			print_stack(t_stack_node *stack);
 void			diff(t_stack_node *sa, t_stack_node *sb);
-char **arg_case(char **argv);
+char			**arg_case(char **argv);
 
 // sa sort
-void init_node_a(t_stack_node **a, t_stack_node **b);
+void			init_node_a(t_stack_node **a, t_stack_node **b);
 void			move_a_to_b(t_stack_node **a, t_stack_node **b);
 // sb sort
 void			init_node_b(t_stack_node **a, t_stack_node **b);
@@ -61,8 +62,8 @@ t_stack_node	*find_smallest(t_stack_node *stack);
 void			sort(t_stack_node *sa, t_stack_node *sb);
 int				stack_size(t_stack_node *sa);
 // libraries/
-int ft_strcmp(char *s1, char *s2);
-char **ft_split(char const *s, char c);
+int				ft_strcmp(char *s1, char *s2);
+char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strjoin(char const *s1, char const *s2);
 int				ft_atoi(const char *str);
@@ -78,10 +79,10 @@ int				invalid_int(char *s);
 // operations
 void			ps(t_stack_node **src, t_stack_node **dest, char c);
 t_stack_node	*sw(t_stack_node *stack, char c);
-void			ss(t_stack_node **sa, t_stack_node **sb,char c);
 t_stack_node	*rs(t_stack_node *stack, char c);
-void			rr(t_stack_node **sa, t_stack_node **sb,char c);
 t_stack_node	*rrs(t_stack_node *stack, char c);
-void			rrr(t_stack_node **sa, t_stack_node **sb,char c);
+void			ss(t_stack_node **sa, t_stack_node **sb, char c);
+void			rr(t_stack_node **sa, t_stack_node **sb, char c);
+void			rrr(t_stack_node **sa, t_stack_node **sb, char c);
 
 #endif

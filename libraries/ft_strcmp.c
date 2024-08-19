@@ -6,18 +6,18 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 23:23:02 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 23:23:04 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/19 11:03:58 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    while (*s1 && *s2)
-    {
-        if (*s1 != *s2)
-            return (*s1 - *s2);
-        s1++;
-        s2++;
-    }
-    return (*s1 - *s2);
+	while (*s1 && *s2)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }

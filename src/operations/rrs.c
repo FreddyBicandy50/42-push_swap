@@ -6,7 +6,7 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 15:18:04 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 23:56:19 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/19 11:03:15 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ t_stack_node	*rrs(t_stack_node *stack, char c)
 	return (last);
 }
 
-void	rrr(t_stack_node **sa, t_stack_node **sb,char c)
+void	rrr(t_stack_node **sa, t_stack_node **sb, char c)
 {
 	if (*sa)
 		*sa = rrs(*sa, ' ');
 	if (*sb)
 		*sb = rrs(*sb, ' ');
-	if(c!=32)
+	if (c != 32)
 		ft_printf("rrr\n");
 }

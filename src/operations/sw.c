@@ -6,15 +6,15 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 15:17:01 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/18 23:44:14 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/19 11:02:20 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_stack_node *sw(t_stack_node *stack, char c)
+t_stack_node	*sw(t_stack_node *stack, char c)
 {
-	t_stack_node *second;
+	t_stack_node	*second;
 
 	if (!stack || !stack->next)
 		return (stack);
@@ -30,7 +30,7 @@ t_stack_node *sw(t_stack_node *stack, char c)
 	return (second);
 }
 
-void ss(t_stack_node **sa, t_stack_node **sb, char c)
+void	ss(t_stack_node **sa, t_stack_node **sb, char c)
 {
 	if (sa && *sa && (*sa)->next)
 		*sa = sw(*sa, ' ');

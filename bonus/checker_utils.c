@@ -6,13 +6,13 @@
 /*   By: fbicandy <fbicandy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 23:13:22 by fbicandy          #+#    #+#             */
-/*   Updated: 2024/08/19 00:44:51 by fbicandy         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:55:25 by fbicandy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void do_multi(t_stack_node **sa, t_stack_node **sb, char *operation)
+void	do_multi(t_stack_node **sa, t_stack_node **sb, char *operation)
 {
 	if (ft_strcmp(operation, "pa\n") == 0)
 		ps(sb, sa, 32);
@@ -26,11 +26,33 @@ void do_multi(t_stack_node **sa, t_stack_node **sb, char *operation)
 		ss(sa, sb, 32);
 }
 
-void result(t_stack_node *sa, int count)
+t_stack_node	*do_sa(t_stack_node *sa, char *operation)
+{
+	if (ft_strcmp(operation, "ra\n") == 0)
+		sa = rs(sa, 32);
+	else if (ft_strcmp(operation, "rra\n") == 0)
+		sa = rrs(sa, 32);
+	else if (ft_strcmp(operation, "sa\n") == 0)
+		sa = sw(sa, 32);
+	return (sa);
+}
+
+t_stack_node	*do_sb(t_stack_node *sb, char *operation)
+{
+	if (ft_strcmp(operation, "rb\n") == 0)
+		sb = rs(sb, 32);
+	else if (ft_strcmp(operation, "rrb\n") == 0)
+		sb = rrs(sb, 32);
+	else if (ft_strcmp(operation, "sb\n") == 0)
+		sb = sw(sb, 32);
+	return (sb);
+}
+
+void	result(t_stack_node *sa, int count)
 {
 	if (!sorted(sa))
 		ft_printf("KO\n");
-	if (stack_size(sa) == 3 && count > 3)
+	else if (stack_size(sa) == 3 && count > 3)
 		ft_printf("KO\n");
 	else if (stack_size(sa) == 5 && count > 8)
 		ft_printf("here KO\n");
@@ -41,34 +63,32 @@ void result(t_stack_node *sa, int count)
 	else
 		ft_printf("OK\n");
 	free_stack(sa);
-	return;
+	return ;
 }
 
-void checker(t_stack_node *sa, t_stack_node *sb)
+void	checker(t_stack_node *sa, t_stack_node *sb)
 {
-	char *line;
-	int 	fd;
-	int count;
+	char	*line;
+	int		count;
+	int		fd;
 
 	count = 0;
 	fd = open("out", O_RDONLY);
-	while ((line = get_next_line(fd)))
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
-		if (ft_strcmp(line, "pa\n") == 0 || ft_strcmp(line, "pb\n") == 0 || ft_strcmp(line, "rr\n") == 0 || ft_strcmp(line, "rrr\n") == 0 || ft_strcmp(line, "ss\n") == 0)
+		if (ft_strcmp(line, "pa\n") == 0 || ft_strcmp(line, "pb\n") == 0
+			|| ft_strcmp(line, "rr\n") == 0
+			|| ft_strcmp(line, "rrr\n") == 0 || ft_strcmp(line, "ss\n") == 0)
 			do_multi(&sa, &sb, line);
-		else if (ft_strcmp(line, "ra\n") == 0)
-			sa = rs(sa, 32);
-		else if (ft_strcmp(line, "rra\n") == 0)
-			sa = rrs(sa, 32);
-		else if (ft_strcmp(line, "sa\n") == 0)
-			sa = sw(sa, 32);
-		else if (ft_strcmp(line, "rb\n") == 0)
-			sb = rs(sb, 32);
-		else if (ft_strcmp(line, "rrb\n") == 0)
-			sb = rrs(sb, 32);
-		else if (ft_strcmp(line, "sb\n") == 0)
-			sb = sw(sb, 32);
+		if (ft_strcmp(line, "ra\n") == 0 || ft_strcmp(line, "rra\n") == 0
+			|| ft_strcmp(line, "sa\n"))
+			sa = do_sa(sa, line);
+		if (ft_strcmp(line, "rb\n") == 0 || ft_strcmp(line, "rrb\n") == 0
+			|| ft_strcmp(line, "sb\n"))
+			sb = do_sb(sb, line);
 		free(line);
+		line = get_next_line(fd);
 		count++;
 	}
 	result(sa, count);
