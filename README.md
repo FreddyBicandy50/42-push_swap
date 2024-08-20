@@ -6,13 +6,15 @@
 
 ## Status
 Started:17/07/2024.
-Finished: 14/08/2024.
-Grade: 100%.
+Finished: 19/08/2024.
+Grade: 125%.
 
 ## Usage
 ``make`` to compile mandatory part.
+``args="3 4 8 9 7 5 1 2 0 -9 -8 -7 -4"``
 ``./push_swap $args | wc -l`` to compile mandatory part.
-
+``make bonus`` to compile mandatory part.
+``./push_swap $args | ./checker $args`` to compile mandatory part with bonus.
 ## Guides
 
 The most interesting part of any project is the research that goes behind it. If you are a student, please don't miss out on that opportunity by simply following guides such as these. In any case, they should under no circumstances be your only source of information about this project. Try things, fail, research, try again and succeed! And maybe write your own guide about it. Writing really is the best way to learn.
