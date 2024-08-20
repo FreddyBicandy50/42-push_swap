@@ -11,9 +11,13 @@ Grade: 125%.
 
 ## Usage
 ``make`` to compile mandatory part.
+
 ``args="3 4 8 9 7 5 1 2 0 -9 -8 -7 -4"``
+
 ``./push_swap $args | wc -l`` to compile mandatory part.
+
 ``make bonus`` to compile mandatory part.
+
 ``./push_swap $args | ./checker $args`` to compile mandatory part with bonus.
 ## Guides
 
