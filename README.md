@@ -16,7 +16,7 @@ Grade: 125%.
 
 ``./push_swap $args | wc -l`` to compile mandatory part.
 
-``make bonus`` to compile mandatory part.
+``make bonus`` to compile bonus part.
 
 ``./push_swap $args | ./checker $args`` to compile mandatory part with bonus.
 ## Guides
