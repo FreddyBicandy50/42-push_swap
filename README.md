@@ -1,7 +1,7 @@
 # push_swap 
 
 <p align="center">
-  <img src="https://github.com/FreddyBicandy50/42draft/blob/main/42_badges/push_swape.png" alt="push_swap 42 project badge"/>
+  <img src="https://github.com/FreddyBicandy50/Libft/blob/main/push_swape.png" alt="push_swap 42 project badge"/>
 </p>
 
 ## Status
