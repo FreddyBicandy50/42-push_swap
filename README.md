@@ -1,7 +1,7 @@
 # push_swap 
 
 <p align="center">
-  <img src="https://github.com/FreddyBicandy50/push_swap/blob/main/push_swape.png" alt="push_swap 42 project badge"/>
+  <img src="https://github.com/FreddyBicandy50/FreddyBicandy50/blob/main/42_badges/push_swape.png" alt="push_swap 42 project badge"/>
 </p>
 
 ## Status
